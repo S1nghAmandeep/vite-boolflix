@@ -3,7 +3,7 @@
 export default {
     props: {
         detail: {
-            type: Array,
+            type: Object,
             required: true
         }
     },
@@ -11,6 +11,9 @@ export default {
         return {
 
         }
+    },
+    methods: {
+
     },
     mounted() {
         console.log(this.detail);
@@ -21,9 +24,18 @@ export default {
 <template>
     <h4>{{ detail.title }}</h4>
     <h4>{{ detail.original_title }}</h4>
-    <p>{{ detail.original_language }}</p>
+    <div>
+        <img v-if="detail.original_language === 'uk'" class="flags" src="uk.png" alt="">
+        <img v-else-if="detail.original_language === 'en'" class="flags" src="America.png" alt="">
+        <img v-else-if="detail.original_language === 'it'" class="flags" src="italia.png" alt="">
+        <p v-else>{{ detail.original_language }}</p>
+    </div>
     <p>{{ detail.vote_average }}</p>
-    <h1>ciao</h1>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flags {
+    display: block;
+    width: 20px;
+}
+</style>
