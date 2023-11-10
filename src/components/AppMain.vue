@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <main>
+    <main class="row container">
         <section>
             <div v-for="(items, i) in store.films" :key="i">
                 <AppCardFilm :detail="items" />

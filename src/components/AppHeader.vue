@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <header>
+    <header class="row container">
         <input type="text" @keyup.enter="$emit('search')" v-model="store.query">
         <button @click="$emit('search')">Serach</button>
     </header>
