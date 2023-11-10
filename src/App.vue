@@ -22,7 +22,8 @@ export default {
       axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
           api_key: this.store.Api_Key,
-          query: this.store.query
+          query: this.store.query,
+          language: 'it_IT'
         }
       }).then(res => {
         this.store.films = res.data.results
