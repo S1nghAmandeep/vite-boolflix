@@ -19,6 +19,7 @@ export default {
 </script>
 
 <template>
+    <img :src="`https://image.tmdb.org/t/p/w342${showsInfo.backdrop_path}`" alt="">
     <h4>{{ showsInfo.name }}</h4>
     <h4>{{ showsInfo.original_name }}</h4>
     <div>
