@@ -25,7 +25,7 @@ export default {
           query: this.store.query
         }
       }).then(res => {
-        this.store.films.push(res.data.results)
+        this.store.films = res.data.results
         this.store.query = ''
         console.log(res.data.results);
       })
