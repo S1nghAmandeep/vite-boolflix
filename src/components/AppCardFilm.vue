@@ -33,9 +33,4 @@ export default {
     <p>{{ detail.vote_average }}</p>
 </template>
 
-<style lang="scss" scoped>
-.flags {
-    display: block;
-    width: 20px;
-}
-</style>
+<style lang="scss" scoped></style>
