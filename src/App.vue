@@ -28,12 +28,27 @@ export default {
       }).then(res => {
         this.store.films = res.data.results
         this.store.query = ''
-        console.log(res.data.results);
+        // console.log(res.data.results);
+
       })
-    }
+
+      axios.get('https://api.themoviedb.org/3/search/tv', {
+        params: {
+          api_key: this.store.Api_Key,
+          query: this.store.query,
+          language: 'it_IT'
+        }
+      }).then(ans => {
+        this.store.series = ans.data.results
+        this.store.query = ''
+        console.log(ans.data.results);
+      })
+    },
+
+
   },
   mounted() {
-    console.log(this.store.films);
+    console.log(this.store.series);
   }
 }
 </script>
