@@ -37,6 +37,9 @@ export default {
         <span v-for="star in store.getStarRate(detail.vote_average)">
             <font-awesome-icon icon="fa-solid fa-star" />
         </span>
+        <span v-for="vote in store.getRate(detail.vote_average)">
+            <font-awesome-icon icon="fa-regular fa-circle" />
+        </span>
     </div>
 </template>
 

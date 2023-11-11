@@ -12,10 +12,14 @@ export default {
     data() {
         return {
             store,
+            vote: 5
 
         }
     },
+    methods: {
+    },
     mounted() {
+
     }
 }
 </script>
@@ -30,9 +34,11 @@ export default {
         <img v-else-if="showsInfo.original_language === 'it'" class="flags" src="italia.png" alt="">
         <p v-else>{{ showsInfo.original_language }}</p>
     </div>
-    <!-- <p>{{ showsInfo.vote_average }}</p> -->
     <span v-for="star in store.getStarRate(showsInfo.vote_average)">
         <font-awesome-icon icon="fa-solid fa-star" />
+    </span>
+    <span v-for="vote in store.getRate(showsInfo.vote_average)">
+        <font-awesome-icon icon="fa-regular fa-circle" />
     </span>
 </template>
 
