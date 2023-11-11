@@ -7,6 +7,10 @@ export const store = reactive({
     films: [],
     series: [],
     getStarRate(rateNum) {
-        return parseInt(rateNum / 2);
+        return Math.ceil(rateNum / 2);
+    },
+    getRate(vote) {
+        const rate = Math.ceil(vote / 2)
+        return 5 - rate
     },
 })
