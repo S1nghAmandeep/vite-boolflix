@@ -1,4 +1,5 @@
 <script>
+import { store } from '../store';
 
 export default {
     props: {
@@ -10,6 +11,7 @@ export default {
 
     data() {
         return {
+            store,
 
         }
     },
@@ -28,7 +30,10 @@ export default {
         <img v-else-if="showsInfo.original_language === 'it'" class="flags" src="italia.png" alt="">
         <p v-else>{{ showsInfo.original_language }}</p>
     </div>
-    <p>{{ showsInfo.vote_average }}</p>
+    <!-- <p>{{ showsInfo.vote_average }}</p> -->
+    <span v-for="star in store.getStarRate(showsInfo.vote_average)">
+        <font-awesome-icon icon="fa-solid fa-star" />
+    </span>
 </template>
 
 <style lang="scss" scoped></style>
