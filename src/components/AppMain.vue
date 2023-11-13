@@ -34,7 +34,7 @@ export default {
                     <AppCardSerie :showsInfo="show" />
                 </div>
             </div>
-            <p class="no-risult" v-if="store.films.length === 0">Nessun risultato</p>
+            <p class="no-risult" v-if="store.series.length === 0">Nessun risultato</p>
         </section>
     </main>
 </template>
