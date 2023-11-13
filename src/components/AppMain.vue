@@ -59,7 +59,8 @@ export default {
 
 .card_film {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    overflow-x: scroll;
     gap: 10px;
     color: red;
     padding: 20px 40px;
@@ -67,7 +68,8 @@ export default {
 
 .card_series {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    overflow-x: scroll;
     gap: 10px;
     color: red;
     padding: 20px 40px;
