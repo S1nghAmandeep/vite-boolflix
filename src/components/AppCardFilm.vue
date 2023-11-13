@@ -36,6 +36,7 @@ export default {
 <template>
     <div @mouseenter="onHover(detail.id)" @mouseleave="leaveHover()" class="card">
         <img class="cover" :src="`https://image.tmdb.org/t/p/w342${detail.backdrop_path}`" alt="">
+        <img class="nullImg" v-if="detail.backdrop_path === null" src="/bg.png" alt="">
         <div v-if="showInfo === detail.id" class="card_hover">
             <ul class="info_card">
                 <li>Titolo: {{ detail.title }}</li>
@@ -64,6 +65,8 @@ export default {
 <style lang="scss" scoped>
 .card {
     position: relative;
+    height: 280px;
+    width: 180px;
 
     .cover {
         height: 280px;
@@ -91,5 +94,10 @@ export default {
     .vote-icon {
         color: yellow;
     }
+}
+
+.nullImg {
+    position: absolute;
+    height: 280px;
 }
 </style>

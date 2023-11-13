@@ -33,6 +33,7 @@ export default {
 <template>
     <div @mouseenter="onHover(showsInfo.id)" @mouseleave="leaveHover()" class="card">
         <img class="cover" :src="`https://image.tmdb.org/t/p/w342${showsInfo.backdrop_path}`" alt="">
+        <img class="nullImg" v-if="showsInfo.backdrop_path === null" src="/bg.png" alt="">
         <div v-if="showInfo === showsInfo.id" class="card_hover">
             <ul class="info_card">
                 <li>Titolo: {{ showsInfo.name }}</li>
@@ -54,28 +55,13 @@ export default {
             </ul>
         </div>
     </div>
-    <!-- <div>
-        <img :src="`https://image.tmdb.org/t/p/w342${showsInfo.backdrop_path}`" alt="">
-        <h4>{{ showsInfo.name }}</h4>
-        <h4>{{ showsInfo.original_name }}</h4>
-        <div>
-            <img v-if="showsInfo.original_language === 'uk'" class="flags" src="uk.png" alt="">
-            <img v-else-if="showsInfo.original_language === 'en'" class="flags" src="America.png" alt="">
-            <img v-else-if="showsInfo.original_language === 'it'" class="flags" src="italia.png" alt="">
-            <p v-else>{{ showsInfo.original_language }}</p>
-        </div>
-        <span v-for="star in store.getStarRate(showsInfo.vote_average)">
-            <font-awesome-icon icon="fa-solid fa-star" />
-        </span>
-        <span v-for="vote in store.getRate(showsInfo.vote_average)">
-            <font-awesome-icon icon="fa-regular fa-star" />
-        </span>
-    </div> -->
 </template>
 
 <style lang="scss" scoped>
 .card {
     position: relative;
+    height: 280px;
+    width: 180px;
 
     .cover {
         height: 280px;
@@ -103,5 +89,10 @@ export default {
     .vote-icon {
         color: yellow;
     }
+}
+
+.nullImg {
+    position: absolute;
+    height: 280px;
 }
 </style>
