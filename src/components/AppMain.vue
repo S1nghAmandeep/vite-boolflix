@@ -19,20 +19,22 @@ export default {
 <template>
     <main class="card">
         <section>
-            <h1 class="card_title">Film </h1>
+            <h1 class="card_title">I Film</h1>
             <div class="card_film">
                 <div v-for="(items, i) in store.films" :key="i">
                     <AppCardFilm :detail="items" />
                 </div>
             </div>
+            <p class="no-risult" v-if="store.films.length === 0">Nessun risultato</p>
         </section>
         <section>
-            <h1 class="card_title">Serie Tv</h1>
+            <h1 class="card_title">Le Serie Tv</h1>
             <div class="card_series">
                 <div v-for="(show, i) in store.series" :key="i">
                     <AppCardSerie :showsInfo="show" />
                 </div>
             </div>
+            <p class="no-risult" v-if="store.films.length === 0">Nessun risultato</p>
         </section>
     </main>
 </template>
@@ -45,7 +47,14 @@ export default {
     .card_title {
         padding-left: 40px;
         color: red;
-        font-size: 40px;
+        font-size: 30px;
+        font-style: oblique;
+    }
+
+    .no-risult {
+        text-align: center;
+        color: white;
+        font-size: 20px;
     }
 }
 
@@ -54,7 +63,7 @@ export default {
     flex-wrap: wrap;
     gap: 10px;
     color: red;
-    padding: 40px;
+    padding: 20px 40px;
 }
 
 .card_series {
