@@ -19,30 +19,37 @@ export default {
   },
   methods: {
     searchFilm() {
+
+      if (!this.store.query) {
+        this.store.films = [];
+        this.store.series = [];
+        return
+      }
+
       axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
           api_key: this.store.Api_Key,
           query: this.store.query,
-          language: 'it_IT'
+          language: 'it-IT'
         }
       }).then(res => {
         this.store.films = res.data.results
         this.store.query = ''
         // console.log(res.data.results);
 
-      })
+      });
 
       axios.get('https://api.themoviedb.org/3/search/tv', {
         params: {
           api_key: this.store.Api_Key,
           query: this.store.query,
-          language: 'it_IT'
+          language: 'it-IT'
         }
       }).then(ans => {
         this.store.series = ans.data.results
         this.store.query = ''
         console.log(ans.data.results);
-      })
+      });
     },
 
 
