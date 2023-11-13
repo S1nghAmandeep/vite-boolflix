@@ -56,7 +56,6 @@ a {
     width: 10px;
 }
 
-
 /* Track */
 ::-webkit-scrollbar-track {
     background: #262626;
@@ -67,10 +66,9 @@ a {
 ::-webkit-scrollbar-thumb {
     background: #3c3c3c;
     border-radius: 50px;
-}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    width: 25px;
+    &:hover {
+        background: #555;
+        width: 25px;
+    }
 }
