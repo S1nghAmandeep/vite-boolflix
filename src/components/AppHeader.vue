@@ -61,7 +61,7 @@ header {
 
 
 .logo {
-    height: 30px;
+    height: 40px;
     display: block;
 }
 
