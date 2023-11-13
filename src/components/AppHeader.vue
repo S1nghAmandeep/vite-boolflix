@@ -30,13 +30,14 @@ export default {
             </div>
             <div>
                 <ul class="row item">
-                    <li><input type="text" @keyup.enter="$emit('search')" placeholder="Cerca" v-model.trim="store.query">
+                    <li><input class="search-bar" type="text" @keyup.enter="$emit('search')" placeholder="Cerca"
+                            v-model.trim="store.query">
                     </li>
                     <li><a href="#">Bambini</a></li>
                     <li><a href="#"><font-awesome-icon icon="fa-solid fa-bell" /></a></li>
-                    <li class="row item">
+                    <li class="row">
                         <img height="20" src="/profile.jpg" alt="">
-                        <font-awesome-icon icon="fa-solid fa-caret-down" />
+                        <a class="icon-profile" href="#"><font-awesome-icon icon="fa-solid fa-caret-down" /></a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +55,7 @@ header {
     justify-content: space-between;
 
     .item {
-        gap: 10px;
+        gap: 20px;
     }
 }
 
@@ -62,5 +63,16 @@ header {
 .logo {
     height: 30px;
     display: block;
+}
+
+.search-bar {
+    padding: 5px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.icon-profile {
+    margin-left: 10px;
 }
 </style>
