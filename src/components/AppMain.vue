@@ -17,15 +17,21 @@ export default {
 </script>
 
 <template>
-    <main class=" container card">
-        <section class="card_film">
-            <div v-for="(items, i) in store.films" :key="i">
-                <AppCardFilm :detail="items" />
+    <main class="card">
+        <section>
+            <h1 class="card_title">Film </h1>
+            <div class="card_film">
+                <div v-for="(items, i) in store.films" :key="i">
+                    <AppCardFilm :detail="items" />
+                </div>
             </div>
         </section>
         <section>
-            <div class="card_series" v-for="(show, i) in store.series" :key="i">
-                <AppCardSerie :showsInfo="show" />
+            <h1 class="card_title">Serie Tv</h1>
+            <div class="card_series">
+                <div v-for="(show, i) in store.series" :key="i">
+                    <AppCardSerie :showsInfo="show" />
+                </div>
             </div>
         </section>
     </main>
@@ -34,16 +40,28 @@ export default {
 <style lang="scss" scoped>
 .card {
     display: flex;
+    flex-direction: column;
+
+    .card_title {
+        padding-left: 40px;
+        color: red;
+        font-size: 40px;
+    }
 }
 
 .card_film {
-    flex-basis: calc(100 / 12) * 6;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     color: red;
-    border: 1px solid black;
+    padding: 40px;
 }
 
 .card_series {
-    flex-basis: calc(100 / 12) * 6;
-    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: red;
+    padding: 40px;
 }
 </style>
