@@ -13,4 +13,10 @@ export const store = reactive({
         const rate = Math.ceil(vote / 2)
         return 5 - rate
     },
+
+    flags: {
+        it: '/italia.png',
+        uk: '/un.jpg',
+        en: '/America.png',
+    }
 })
