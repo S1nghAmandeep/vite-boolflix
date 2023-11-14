@@ -23,6 +23,7 @@ export default {
       if (!this.store.query) {
         this.store.films = [];
         this.store.series = [];
+        this.people = [];
         return
       }
 
@@ -34,6 +35,18 @@ export default {
         }
       }).then(res => {
         this.store.films = res.data.results
+
+        store.films.forEach(item => {
+          const credits = item.id
+          axios.get(`https://api.themoviedb.org/3/movie/${credits}/credits`, {
+            params: {
+              api_key: this.store.Api_Key,
+            }
+          }).then(res => {
+            this.store.people = res.data.cast.slice(0, 5)
+            console.log(this.store.people);
+          })
+        });
         this.store.query = ''
         // console.log(res.data.results);
 
@@ -53,14 +66,15 @@ export default {
         });
         this.store.series = series
         this.store.query = ''
-        console.log(series);
+        // console.log(series);
       });
+
     },
 
 
   },
   mounted() {
-    console.log(this.store.series);
+
   }
 }
 </script>
