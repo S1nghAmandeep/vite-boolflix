@@ -35,8 +35,8 @@ export default {
 
 <template>
     <div @mouseenter="onHover(detail.id)" @mouseleave="leaveHover()" class="card">
-        <img class="cover" :src="`https://image.tmdb.org/t/p/w342${detail.backdrop_path}`" alt="">
-        <img class="nullImg" v-if="detail.backdrop_path === null" src="/bg.png" alt="">
+        <img class="cover" :src="`https://image.tmdb.org/t/p/w342${detail.poster_path}`" alt="">
+        <img class="nullImg" v-if="detail.poster_path === null" src="/bg.png" alt="">
         <div v-if="showInfo === detail.id" class="card_hover">
             <ul class="info_card">
                 <li>Titolo: {{ detail.title }}</li>
