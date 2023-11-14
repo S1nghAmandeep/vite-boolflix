@@ -70,8 +70,8 @@ export default {
 
     .cover {
         height: 280px;
-        width: 180px;
-        object-fit: cover;
+        // width: 180px;
+        // object-fit: cover;
     }
 
     .card_hover {
