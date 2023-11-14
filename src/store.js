@@ -6,6 +6,7 @@ export const store = reactive({
     Api_Key: 'b827cbb1c5cb24c27d027485053cd86e',
     films: [],
     series: [],
+    people: [],
     getStarRate(rateNum) {
         return Math.ceil(rateNum / 2);
     },
