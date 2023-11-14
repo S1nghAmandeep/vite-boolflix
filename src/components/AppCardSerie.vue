@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { store } from '../store';
 
 export default {
@@ -32,8 +32,8 @@ export default {
 
 <template>
     <div @mouseenter="onHover(showsInfo.id)" @mouseleave="leaveHover()" class="card">
-        <img class="cover" :src="`https://image.tmdb.org/t/p/w342${showsInfo.backdrop_path}`" alt="">
-        <img class="nullImg" v-if="showsInfo.backdrop_path === null" src="/bg.png" alt="">
+        <img class="cover" :src="`https://image.tmdb.org/t/p/w342${showsInfo.poster_path}`" alt="">
+        <img class="nullImg" v-if="showsInfo.poster_path === null" src="/bg.png" alt="">
         <div v-if="showInfo === showsInfo.id" class="card_hover">
             <ul class="info_card">
                 <li>Titolo: {{ showsInfo.name }}</li>
@@ -95,4 +95,4 @@ export default {
     position: absolute;
     height: 280px;
 }
-</style>
+</style> -->
