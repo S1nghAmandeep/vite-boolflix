@@ -46,9 +46,14 @@ export default {
           language: 'it-IT'
         }
       }).then(ans => {
-        this.store.series = ans.data.results
+        const series = ans.data.results
+        series.forEach(item => {
+          item.titile = item.name
+          item.original_title = item.original_name
+        });
+        this.store.series = series
         this.store.query = ''
-        console.log(ans.data.results);
+        console.log(series);
       });
     },
 
